@@ -1,11 +1,17 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import bg1 from "./image/bg1.jpg";
+import bg2 from "./image/bg2.jpg";
+import bg3 from "./image/bg3.jpg";
+import bg4 from "./image/bg4.jpg";
+import bg5 from "./image/bg5.jpg";
+import bg6 from "./image/bg6.jpg";
 
 function Testapi() {
   const [input, setInput] = useState("");
   const [ranking, setRanking] = useState([]);
-  // const [news, setnews] = useState([]);
+  const [image, setimage] = useState({ bg1 });
 
   const options = {
     method: "GET",
@@ -60,12 +66,29 @@ function Testapi() {
     fetchResults(input);
   };
 
+  // const fetchImg = async () => {
+  //   try {
+  //     const data = await axios(
+  //       "https://source.unsplash.com/collection/1445529"
+  //     );
+  //     console.log(data);
+  //     setimage(data);
+  //   } catch (error) {
+  //     console.log(error.response);
+  //   }
+  // };
+  // fetchImg();
+
   return (
     <div className="main-app">
       <div className="App-header">
         <header className="App">
           <div>
-            <h1 className="heading">Formula one Race Results</h1>
+            <h1 className="heading">
+              {" "}
+              <span className="span1">Formula </span>
+              <span className="span2">one</span> <br></br>Race Results
+            </h1>
             <p className="howto">
               Please add the Year you want to check the winners of each Grand
               Prix held that year from the first year '1950'
@@ -73,7 +96,9 @@ function Testapi() {
           </div>
           <div>
             <form onSubmit={handleSubmit} className="form">
-              <label htmlFor="Search">Search Season year </label>
+              <label className="race-count" htmlFor="Search">
+                Search Season year{" "}
+              </label>
               <input
                 className="form-input"
                 type="text"
@@ -89,7 +114,7 @@ function Testapi() {
             </form>
           </div>
         </header>
-        <main>
+        <main className="results-container">
           <h3 className="race-count">Total Races Held:{ranking.length}</h3>
           {ranking.map((result, index) => {
             const { grandPrix, date, driver, team, laps } = result;
@@ -106,23 +131,6 @@ function Testapi() {
             );
           })}
         </main>
-        {/* <section>
-          {news.map((item, index) => {
-            const { source, title, url } = item;
-            return (
-              <div className="news-container" key={index}>
-                <div className="posts">
-                  <h3>Source:{source} </h3>
-                  <h4>{title}</h4>
-                  <button>
-                    {" "}
-                    <a href={url}>read more</a>
-                  </button>
-                </div>
-              </div>
-            );
-          })}
-        </section> */}
       </div>
     </div>
   );

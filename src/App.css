@@ -69,6 +69,15 @@ body {
   font-size: calc(10px + 2vmin);
 }
 
+.span1 {
+  color: red;
+  background: #44474d;
+}
+.span2 {
+  color: #44474d;
+  background: red;
+}
+
 .form {
   padding: 10px;
 
@@ -88,22 +97,30 @@ body {
 }
 
 .btn {
-  background: linear-gradient(to right, black 20%, #61dafb);
+  /* background: linear-gradient(to right, black 20%, #61dafb); */
+  background: rgba(72, 163, 191, 0.987);
   padding: 0.5rem 1rem;
   font-size: 1.6rem;
   border-radius: var(--radius);
-  color: var(--clr-white);
+  color: black;
   cursor: pointer;
   margin-top: 10px;
   text-transform: uppercase;
+  transition: var(--transition);
 }
 .btn:hover {
-  background: var(--clr-grey-4);
-  color: #333;
+  background: rgba(30, 68, 80, 0.987);
+  color: white;
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
+  /* background-image: url(./image/bg3.jpg);
+  background-position: center;
+  background-repeat: no-repeat; */
+  /* background-size: contain; */
+
+  /* width: 100vw; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -111,6 +128,20 @@ body {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.results-container {
+  display: flex;
+  align-items: stretch;
+  /* margin: auto; */
+  background: rgb(12 25 29);
+  padding: 20px;
+  margin: 10px;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 0.5px solid #5ed3f3;
 }
 
 .results {
@@ -131,12 +162,7 @@ body {
 .heading {
   text-transform: uppercase;
 }
-.underline {
-  width: 600px;
-  height: 5px;
 
-  color: #61dafb;
-}
 .race-count {
   text-transform: uppercase;
   letter-spacing: 1rem;
@@ -145,6 +171,8 @@ body {
 .howto {
   font-size: 1rem;
   color: #61dafb;
+  text-transform: capitalize;
+  text-align: center;
 }
 .team {
   font-size: 1.5rem;

@@ -1,24 +1,9 @@
-import axios from "axios";
-
-const options2 = {
-  method: "GET",
-  url: "https://f1-news.p.rapidapi.com/news",
-  headers: {
-    "X-RapidAPI-Key": "1e2e850ac9msh7c289f39ee50a35p1ca0eajsn229da1eaba8e",
-    "X-RapidAPI-Host": "f1-news.p.rapidapi.com",
-  },
+const totalCount = 6;
+const changeit = () => {
+  let num = Math.ceil(Math.random() * totalCount);
+  document.body.background = "image/" + num + ".jpg";
+  document.body.style.backgroundRepeat = "repeat"; // Background repeat
 };
-
-const fetch = async () => {
-  try {
-    const response = await axios(options2);
-    console.log(response);
-  } catch (error) {
-    console.log(error.response);
-  }
-};
-
-fetch();
 
 const drivers = [
   {
