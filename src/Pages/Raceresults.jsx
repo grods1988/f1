@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import resultsData from "../resultsData";
 import { Form, Container, Button, Card } from "react-bootstrap";
 
@@ -45,6 +46,9 @@ function Raceresults() {
   }
   return (
     <>
+      <Link to="/" className="btn btn-primary">
+        Back home
+      </Link>
       <section>
         <div className="container my-3 ">
           <form onSubmit={handleSubmit}>

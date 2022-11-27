@@ -1,8 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Container, Navbar, Nav } from "react-bootstrap";
-import { Link, Outlet } from "react-router-dom";
 
-function Toolbar() {
+const Navbaro = () => {
   return (
     <div>
       <Navbar bg="dark" variant="dark" className="toolbar">
@@ -36,6 +36,6 @@ function Toolbar() {
       </Navbar>
     </div>
   );
-}
+};
 
-export default Toolbar;
+export default Navbaro;
