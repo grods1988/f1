@@ -1,10 +1,15 @@
 import Testapi from "./Testapi";
 import "./App.css";
+import News from "./News";
+import Toolbar from "./Toolbar";
 
 function App() {
   return (
     <div className="App">
-      <Testapi />
+      <Toolbar />
+      {/* <Testapi /> */}
+
+      <News />
     </div>
   );
 }

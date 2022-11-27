@@ -1,17 +1,10 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import bg1 from "./image/bg1.jpg";
-import bg2 from "./image/bg2.jpg";
-import bg3 from "./image/bg3.jpg";
-import bg4 from "./image/bg4.jpg";
-import bg5 from "./image/bg5.jpg";
-import bg6 from "./image/bg6.jpg";
 
 function Testapi() {
   const [input, setInput] = useState("");
   const [ranking, setRanking] = useState([]);
-  const [image, setimage] = useState({ bg1 });
 
   const options = {
     method: "GET",
@@ -59,25 +52,13 @@ function Testapi() {
   // };
 
   // fetch();
-  // --
+
+  //   https://newsapi.org/v2/everything?q=formula1&language=en&from=2022-10-26&sortBy=publishedAt&pageSize=30&excludeDomains=yahoo.com,Biztoc.com,cryptodaily.co.uk,globenewswire.com&apiKey=706e3f9a85834c848a24dd1ec7f8159f
 
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchResults(input);
   };
-
-  // const fetchImg = async () => {
-  //   try {
-  //     const data = await axios(
-  //       "https://source.unsplash.com/collection/1445529"
-  //     );
-  //     console.log(data);
-  //     setimage(data);
-  //   } catch (error) {
-  //     console.log(error.response);
-  //   }
-  // };
-  // fetchImg();
 
   return (
     <div className="main-app">
