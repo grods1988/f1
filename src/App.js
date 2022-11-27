@@ -1,4 +1,4 @@
-import Testapi from "./Testapi";
+import Raceresults from "./Raceresults";
 import "./App.css";
 import News from "./News";
 import Toolbar from "./Toolbar";
@@ -7,9 +7,9 @@ function App() {
   return (
     <div className="App">
       <Toolbar />
-      {/* <Testapi /> */}
+      <Raceresults />
 
-      <News />
+      {/* <News /> */}
     </div>
   );
 }

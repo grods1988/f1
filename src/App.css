@@ -71,7 +71,7 @@ body {
   align-items: flex-end;
   justify-content: center;
   flex-direction: row;
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
 .button-addon {
   margin-bottom: 2px;
