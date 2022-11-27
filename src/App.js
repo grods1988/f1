@@ -1,6 +1,6 @@
-import Raceresults from "./Raceresults";
+import Raceresults from "./Pages/Raceresults";
 import "./App.css";
-import News from "./News";
+import News from "./Pages/News";
 import Toolbar from "./Toolbar";
 
 function App() {

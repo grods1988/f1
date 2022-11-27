@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import newsData from "./newsData";
+import newsData from "../newsData";
 import {
   Button,
   Card,
