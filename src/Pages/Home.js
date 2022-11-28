@@ -8,6 +8,9 @@ const Home = () => {
     <>
       <Navbaro />
       <div className="container">
+        <h1>
+          THIS SECTION IS IN PROGRESS in the meantime visit the other sections
+        </h1>
         <Outlet />
       </div>
     </>

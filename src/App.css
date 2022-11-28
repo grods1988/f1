@@ -142,146 +142,37 @@ body {
   color: red;
 }
 
-/*
-.App {
-  text-align: center;
-  background-color: #282c34;
-  color: white;
-  font-size: calc(10px + 2vmin);
+.inner {
+  overflow: hidden;
 }
 
-.span1 {
-  color: red;
-  background: #44474d;
-}
-.span2 {
-  color: #44474d;
-  background: red;
+.inner img {
+  transition: all 1.5s ease;
 }
 
-.form {
-  padding: 10px;
-
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+.inner:hover img {
+  transform: scale(1.5);
 }
-
-.form-input {
-  border-color: #61dafb;
-  padding: 0.5rem 1rem;
-  font-size: 2.2rem;
-  border-top-left-radius: var(--radius);
-  border-bottom-left-radius: var(--radius);
-  text-align: center;
-}
-
-.btn {
-  
-  background: rgba(72, 163, 191, 0.987);
-  padding: 0.5rem 1rem;
-  font-size: 1.6rem;
-  border-radius: var(--radius);
-  color: black;
-  cursor: pointer;
-  margin-top: 10px;
-  text-transform: uppercase;
-  transition: var(--transition);
-}
-.btn:hover {
-  background: rgba(30, 68, 80, 0.987);
+.color-1 {
+  background: #7430f9;
   color: white;
 }
-
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.color-1:hover {
+  background: #8e59f7;
+  transition: all 0.75s ease;
 }
-
-.results-container {
-  display: flex;
-  align-items: stretch;
-
-  background: rgb(12 25 29);
-  padding: 20px;
-  margin: 10px;
-  align-content: center;
-  justify-content: center;
-  flex-direction: column;
-  border-radius: 10px;
-  border: 0.5px solid #5ed3f3;
-}
-
-.results {
-  color: #61dafb;
-  border-bottom: 2px dotted #61dafb;
-  padding: 20px;
-  border: #fff solid 2px;
-  margin: 20px;
+.nav-color-1 {
+  background: #8e59f7;
+  font-size: 1.5em;
   text-transform: capitalize;
-  letter-spacing: 0.25rem;
 }
-.winner {
-  background: #61dafb;
-  color: black;
-  border-radius: 10px;
+.nav-color-1 a:hover {
+  transition: all 1.75s ease;
+  color: #dadada;
 }
-
-.heading {
-  text-transform: uppercase;
-}
-
-.race-count {
-  text-transform: uppercase;
-  letter-spacing: 1rem;
-}
-
-.howto {
-  font-size: 1rem;
-  color: #61dafb;
-  text-transform: capitalize;
+.nav-icon {
+  font-size: 2em;
+  padding-left: 3px;
+  margin-left: 2px;
   text-align: center;
 }
-.team {
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-}
-.news-container {
-  display: flex;
-}
-*/
-/* <section>
-      <div>
-        <h1>Hello News</h1>
-      </div>
-      <div className="news-container">
-        {" "}
-        {news.map((item, index) => {
-          const { source, author, title, decsription, url, urlToImage } = item;
-          return (
-            <div key={index}>
-              <img src={urlToImage} style={{ width: "400px" }} alt="" />
-              <h2>Title:{title}</h2>
-              <h4>
-                {author} : {source.name}
-              </h4>
-              <p>{item.publishedAt}</p>
-
-              <button>
-                <a href={url} target="_blank">
-                  Read More
-                </a>
-              </button>
-            </div>
-          );
-        })}
-      </div>
-    </section> */

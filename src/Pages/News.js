@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import newsData from "../newsData";
+
 import {
   Button,
   Card,
@@ -12,6 +13,8 @@ import {
   Container,
   Alert,
 } from "react-bootstrap";
+
+console.log(newsData[0].articles);
 
 function News() {
   const [news, setNews] = useState(newsData[0].articles);
@@ -24,80 +27,62 @@ function News() {
   };
 
   //TODO:Fetch data:
+  const fetchResults = async (year) => {
+    try {
+      const { data } = await axios(
+        `https://newsapi.org/v2/everything?q=formula1&language=en&from=2022-10-29&sortBy=publishedAt&pageSize=30&excludeDomains=yahoo.com,Biztoc.com,cryptodaily.co.uk,globenewswire.com&apiKey=706e3f9a85834c848a24dd1ec7f8159f`
+      );
+      const newsData = data.articles;
+      setNews(newsData);
+      console.log(newsData);
+    } catch (err) {
+      console.log(err.response);
+    }
+  };
+  //   useEffect(() => {
+  //     fetchResults();
+  //   }, []);
 
   if (news.length < 1) {
     return (
-      <Container>
-        <Alert variant="danger">
+      <div className="container">
+        <Alert variant="danger display-2">
           No more Articles left to show Please Refresh the page
         </Alert>
-      </Container>
+      </div>
     );
   }
   return (
-    <section className="bg-dark">
-      <div className="container my-3">
-        <div className="row ">
-          {news.map((item, index) => {
-            const {
-              source,
-              author,
-              title,
-              description,
-              url,
-              urlToImage,
-              publishedAt,
-            } = item;
-
-            return (
-              <Col key={index} className="col-4">
-                <Card>
-                  <Card.Img variant="top" src={urlToImage} />
-                  <Card.Body>
-                    <Card.Title>{title}</Card.Title>
-                    <Card.Text>
-                      FIXME:
-                      {readMore
-                        ? description
-                        : `${description.substring(0, 100)}`}
-                      ...
-                      <button
-                        className="readmore"
-                        onClick={() => setReadMore(!readMore)}
-                      >
-                        {readMore ? "Show Less" : "...Read more"}
-                      </button>
-                    </Card.Text>
-                  </Card.Body>
-                  <ListGroup className="list-group-flush">
-                    <ListGroup.Item>
-                      <h6>Source: {source.name}</h6>
-                      Author: {author}
-                    </ListGroup.Item>
-                    <ListGroup.Item>
-                      Published on: {publishedAt.toString().substring(0, 10)}
-                    </ListGroup.Item>
-                    {/* <ListGroup.Item>Vestibulum at eros</ListGroup.Item> */}
-                  </ListGroup>
-                  <Card.Body>
-                    <Button className="button-addon" href={url} target="_blank">
-                      Visit Source
-                    </Button>
-                    <Button
-                      onClick={() => removeArticle(title)}
-                      className="button-addon "
-                      variant="danger"
-                    >
-                      Remove Article
-                    </Button>
-                  </Card.Body>
-                </Card>
-              </Col>
-            );
-          })}
-        </div>
-      </div>
-    </section>
+    <div className="container d-flex justify-content-center align-items-end flex-wrap">
+      {news.map((item) => {
+        const { author, content, description, source, title, url, urlToImage } =
+          item;
+        return (
+          <div className="row mx-3 ">
+            <div className="col gy-2">
+              <div className="card" style={{ width: "19rem" }}>
+                <div className="inner">
+                  <img src={urlToImage} className="card-img-top" alt={title} />
+                </div>
+                <div className="card-body">
+                  <h5 className="card-title">{title}</h5>
+                  <p className="card-text">{description}</p>
+                  <a href={url} target="_blank" className="btn color-1">
+                    Read more
+                  </a>
+                  <button
+                    onClick={() => removeArticle(title)}
+                    className="btn btn-secondary btn mx-1 "
+                  >
+                    Remove Article
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
   );
 }
 

@@ -46,11 +46,11 @@ function Raceresults() {
   }
   return (
     <>
-      <Link to="/" className="btn btn-primary">
+      {/* <Link to="/" className="btn btn-primary">
         Back home
-      </Link>
+      </Link> */}
       <section>
-        <div className="container my-3 ">
+        <div className=" my-3 ">
           <form onSubmit={handleSubmit}>
             <input
               type="text"
