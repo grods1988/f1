@@ -46,19 +46,7 @@ const newsData = [
         content:
           "By Balazs Szabo on 20 Nov 2022, 13:52\r\nThanks to the relatively high degradation seen over the first two days of the Abu Dhabi Grand Prix weekend, Formula Ones sole tyre supplier Pirelli thinks that … [+2696 chars]",
       },
-      {
-        source: { id: null, name: "Biztoc.com" },
-        author: "dickenskale",
-        title:
-          "From $32 billion to criminal investigations: How Sam Bankman-Fried's empire vanished overnight",
-        description:
-          "The Kimchi Swap put Sam Bankman-Fried on the map. The ex-Jane Street Capital quant trader noticed something funny when he looked at the price of bitcoin on exchanges around the world. Today, that... #bankman #fried #formula1 #goldmansachs #miami #quanttrader …",
-        url: "https://biztoc.com/p/gu82u3si?ref=rss",
-        urlToImage: "https://cdn.biztoc.com/og/gu82u3si.jpg",
-        publishedAt: "2022-11-16T00:10:05Z",
-        content:
-          "The Kimchi Swap put Sam Bankman-Fried on the map. The ex-Jane Street Capital quant trader noticed something funny when he looked at the price of bitcoin on exchanges around the world. Today, that pri… [+1229 chars]",
-      },
+
       {
         source: { id: null, name: "Sports Illustrated" },
         author: "Madeline Coleman",

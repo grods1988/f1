@@ -3,7 +3,6 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import resultsData from "../resultsData";
-import { Form, Container, Button, Card } from "react-bootstrap";
 
 function Raceresults() {
   const [year, setYear] = useState("");
@@ -23,7 +22,7 @@ function Raceresults() {
         `https://formula-1-all-time-statistics.p.rapidapi.com/${year}/races/all`,
         options
       );
-      //   console.log(data);
+      console.log(data);
       setRanking(data);
     } catch (err) {
       console.log(err.response);
@@ -38,7 +37,7 @@ function Raceresults() {
   };
   if ({ year } < 1950) {
     return (
-      <div className="alert alert-info">
+      <div className="alert">
         {" "}
         <h2>Invalid Value</h2>
       </div>
@@ -46,17 +45,21 @@ function Raceresults() {
   }
   return (
     <>
-      {/* <Link to="/" className="btn btn-primary">
-        Back home
-      </Link> */}
-      <section>
-        <div className=" my-3 ">
+      <div className="container">
+        <div className="page-title">
+          <h3>Race Results </h3>
+          <p>Blast from the Past</p>
+        </div>
+      </div>
+
+      <section className="container">
+        <div className="search">
           <form onSubmit={handleSubmit}>
             <input
               type="text"
               id="search"
               name="search"
-              className="w-50 p-2 rounded border-2 shadow-lg text-uppercase  "
+              className="form-input"
               placeholder="Enter any Year (1950-Current) "
               //   super important to connect to state.
               value={year}
@@ -65,9 +68,9 @@ function Raceresults() {
 
             <div className="row my-3">
               <div className="col ">
-                <Button variant="danger" size="lg" onClick={handleSubmit}>
+                <button className="btn-red" onClick={handleSubmit}>
                   Search Race Winners
-                </Button>
+                </button>
               </div>
             </div>
           </form>
@@ -75,28 +78,28 @@ function Raceresults() {
       </section>
       {/* // Loading the results */}
 
-      <div className="container my-3">
-        <div className="row">
+      <div className="container">
+        <div className="results-row">
           {ranking.map((rank, index) => {
             const { grandPrix, date, driver, team, laps, raceTime } = rank;
 
             return (
-              <div className=" col-md-3  mb-3 shadow-lg " key={index}>
-                <div className="card  border border-2 border- rounded-2 h-100">
-                  <div className="card-body ">
-                    <h5 className="card-title bg-danger text-light rounded p-1 text-center">
+              <div className="card" key={index}>
+                <div className="card-info">
+                  <div className="">
+                    <h3 className="race">
                       {index + 1}:{grandPrix}
-                    </h5>
-                    <p className="card-text m-0">{date}</p>
-                    <p className="lead m-0">{laps} Laps</p>
+                    </h3>
+                    <p className="">{date}</p>
+                    <p className="">{laps} Laps</p>
                     Total RaceTime: {raceTime}
                   </div>
-                  <ul className="list-group list-group-flush">
-                    <li className="list-group-item ">
-                      <h4>{driver}</h4>
+                  <ul className="">
+                    <li className="driver">
+                      <h3>{driver}</h3>
                     </li>
-                    <li className="list-group-item">
-                      <h6 className="m-0">{team}</h6>
+                    <li className="">
+                      <h5 className="team">{team}</h5>
                     </li>
                   </ul>
                 </div>
